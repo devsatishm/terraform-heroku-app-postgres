@@ -7,7 +7,7 @@ A Terraform module to set up a Heroku app for hosting a Flask application with a
 * A Heroku application created with the Python buildpack.
 * A Heroku Postgres database provisioned for the application.
 * An auto-generated Flask `SECRET_KEY` set as a config var.
- 
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development. See local usage for notes on how to deploy the project.
