@@ -4,9 +4,9 @@ A Terraform module to set up a Heroku app for hosting a Flask application with a
 
 ## Features
 
-* A Heroku application created with the Python buildpack.
-* A Heroku Postgres database provisioned for the application.
-* An auto-generated Flask `SECRET_KEY` set as a config var.
+- A Heroku application created with the Python buildpack.
+- A Heroku Postgres database provisioned for the application.
+- An auto-generated Flask `SECRET_KEY` set as a config var.
 
 ## Getting Started
 
@@ -63,8 +63,8 @@ module "terraform-heroku-flask-postgres" {
 
 ## Built With
 
-* [Heroku Provider](https://www.terraform.io/docs/providers/heroku/) - Terraform Provider
-* [Random Provider](https://www.terraform.io/docs/providers/random/) - Terraform Provider
+- [Heroku Provider](https://www.terraform.io/docs/providers/heroku/) - Terraform Provider
+- [Random Provider](https://www.terraform.io/docs/providers/random/) - Terraform Provider
 
 ## Contributing
 
@@ -72,7 +72,7 @@ Feel free to submit a pull request!
 
 ## Authors
 
-* **aqche** - *Author* - [aqche](https://github.com/aqche)
+- **aqche** - _Author_ - [aqche](https://github.com/aqche)
 
 See also the list of [contributors](https://github.com/aqche/terraform-heroku-flask-postgres/contributors) who participated in this project.
 
