@@ -20,33 +20,33 @@ To run this module you need [Terraform](https://www.terraform.io/).
 
 Clone the project.
 
-```
+```sh
 git clone https://github.com/aqche/terraform-heroku-app-postgres.git
 ```
 
 Use `init` to install the project dependencies.
 
-```
+```sh
 cd terraform-heroku-app-postgres
 terraform init
 ```
 
 Set the `HEROKU_EMAIL` and `HEROKU_API_KEY` environment variables using your Heroku credentials.
 
-```
+```sh
 export HEROKU_EMAIL="ops@company.com"
 export HEROKU_API_KEY="heroku_api_key"
 ```
 
 Run a `plan` and pass in the desired variables to view the Terraform execution plan. For more information on each variable, view the [variables.tf](./variables.tf) file.
 
-```
+```sh
 terraform plan -var 'name=heroku-app-name'
 ```
 
 When you are ready to deploy the Heroku infrastructure, run `apply`.
 
-```
+```sh
 terraform apply -var 'name=heroku-app-name'
 ```
 
