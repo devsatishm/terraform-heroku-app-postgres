@@ -1,12 +1,12 @@
-# terraform-heroku-flask-postgres
+# terraform-heroku-app-postgres
 
-A Terraform module to set up a Heroku app for hosting a Flask application with a PostgreSQL database.
+A Terraform module to set up a Heroku app for hosting a web application with a PostgreSQL database.
 
 ## Features
 
-- A Heroku application created with the Python buildpack.
-- A Heroku Postgres database provisioned for the application.
-- An auto-generated Flask `SECRET_KEY` set as a config var.
+- A Heroku application created with a specified buildpack (Defaults to Python) and region (Defaults to US).
+- A Heroku Postgres database provisioned for the application (Defaults to Hobby tier).
+- The ability to provide configuration variables for the provisioned Heroku application.
 
 ## Getting Started
 
@@ -21,13 +21,13 @@ To run this module you need [Terraform](https://www.terraform.io/).
 Clone the project.
 
 ```
-git clone https://github.com/aqche/terraform-heroku-flask-postgres.git
+git clone https://github.com/aqche/terraform-heroku-app-postgres.git
 ```
 
 Use `init` to install the project dependencies.
 
 ```
-cd terraform-heroku-flask-postgres
+cd terraform-heroku-app-postgres
 terraform init
 ```
 
@@ -38,7 +38,7 @@ export HEROKU_EMAIL="ops@company.com"
 export HEROKU_API_KEY="heroku_api_key"
 ```
 
-Run a `plan` and pass in the desired name of your Heroku application to view the Terraform execution plan.
+Run a `plan` and pass in the desired variables to view the Terraform execution plan. For more information on each variable, view the [variables.tf](./variables.tf) file.
 
 ```
 terraform plan -var 'name=heroku-app-name'
@@ -55,8 +55,8 @@ terraform apply -var 'name=heroku-app-name'
 To use this module in your own Terraform code, simply source this repository and pass in the desired name of your Heroku application.
 
 ```hcl
-module "terraform-heroku-flask-postgres" {
-  source = "github.com/aqche/terraform-heroku-flask-postgres.git"
+module "terraform-heroku-app-postgres" {
+  source = "github.com/aqche/terraform-heroku-app-postgres.git"
   name   = "heroku-app-name"
 }
 ```
@@ -64,7 +64,6 @@ module "terraform-heroku-flask-postgres" {
 ## Built With
 
 - [Heroku Provider](https://www.terraform.io/docs/providers/heroku/) - Terraform Provider
-- [Random Provider](https://www.terraform.io/docs/providers/random/) - Terraform Provider
 
 ## Contributing
 
@@ -74,7 +73,7 @@ Feel free to submit a pull request!
 
 - **aqche** - _Author_ - [aqche](https://github.com/aqche)
 
-See also the list of [contributors](https://github.com/aqche/terraform-heroku-flask-postgres/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/aqche/terraform-heroku-app-postgres/contributors) who participated in this project.
 
 ## License
 
