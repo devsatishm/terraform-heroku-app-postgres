@@ -78,3 +78,12 @@ See also the list of [contributors](https://github.com/aqche/terraform-heroku-ap
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for more details.
+
+## Dependencies
+
+```sh
+Terraform v1.1.9
+on darwin_amd64
++ provider registry.terraform.io/hashicorp/random v3.1.3
++ provider registry.terraform.io/heroku/heroku v5.0.2
+```

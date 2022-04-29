@@ -6,7 +6,17 @@ variable "name" {
 variable "region" {
   type        = string
   description = "The region that the app should be deployed in. Defaults to US."
-  default     = "us"
+  default     = "virginia"
+}
+
+variable "private_space" {
+  default  = "sfdc-digital-poc"
+  type     = string
+}
+
+variable "team_name" {
+  default = "sfdc-digital-nonprod"
+  type    = string
 }
 
 variable "buildpacks" {
