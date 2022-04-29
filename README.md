@@ -16,12 +16,22 @@ These instructions will get you a copy of the project up and running on your loc
 
 To run this module you need [Terraform](https://www.terraform.io/).
 
+
+### Dependencies
+
+```sh
+Terraform v1.1.9
+on darwin_amd64
++ provider registry.terraform.io/hashicorp/random v3.1.3
++ provider registry.terraform.io/heroku/heroku v5.0.2
+```
+
 ### Local Usage
 
 Clone the project.
 
 ```sh
-git clone https://github.com/aqche/terraform-heroku-app-postgres.git
+git clone https://github.com/devsatishm/terraform-heroku-app-postgres.git
 ```
 
 Use `init` to install the project dependencies.
@@ -31,59 +41,35 @@ cd terraform-heroku-app-postgres
 terraform init
 ```
 
-Set the `HEROKU_EMAIL` and `HEROKU_API_KEY` environment variables using your Heroku credentials.
+Set the Heroku credentials.
+```sh
+heroku login
+```
+
+Alternatively, if you are running this in non-corp account, set the `HEROKU_EMAIL` and `HEROKU_API_KEY` environment variables using your Heroku credentials.
 
 ```sh
-export HEROKU_EMAIL="ops@company.com"
+export HEROKU_EMAIL="ops@email.com"
 export HEROKU_API_KEY="heroku_api_key"
 ```
+
+Update the `terraform.auto.tfvars` file by assigining values to the variables.
+
 
 Run a `plan` and pass in the desired variables to view the Terraform execution plan. For more information on each variable, view the [variables.tf](./variables.tf) file.
 
 ```sh
-terraform plan -var 'name=heroku-app-name'
+terraform plan
 ```
 
 When you are ready to deploy the Heroku infrastructure, run `apply`.
 
 ```sh
-terraform apply -var 'name=heroku-app-name'
+terraform apply
 ```
 
-### Module Usage
-
-To use this module in your own Terraform code, simply source this repository and pass in the desired name of your Heroku application.
-
-```hcl
-module "terraform-heroku-app-postgres" {
-  source = "github.com/aqche/terraform-heroku-app-postgres.git"
-  name   = "heroku-app-name"
-}
-```
-
-## Built With
-
-- [Heroku Provider](https://www.terraform.io/docs/providers/heroku/) - Terraform Provider
-
-## Contributing
-
-Feel free to submit a pull request!
-
-## Authors
-
-- **aqche** - _Author_ - [aqche](https://github.com/aqche)
-
-See also the list of [contributors](https://github.com/aqche/terraform-heroku-app-postgres/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for more details.
-
-## Dependencies
+For cleanup, run `destoy`.
 
 ```sh
-Terraform v1.1.9
-on darwin_amd64
-+ provider registry.terraform.io/hashicorp/random v3.1.3
-+ provider registry.terraform.io/heroku/heroku v5.0.2
+terraform destroy
 ```
