@@ -10,12 +10,12 @@ variable "region" {
 }
 
 variable "private_space" {
-  default  = "sfdc-digital-poc"
-  type     = string
+  description  = "Heroku private space"
+  type         = string
 }
 
 variable "team_name" {
-  default = "sfdc-digital-nonprod"
+  description = "Heroku team name"
   type    = string
 }
 
